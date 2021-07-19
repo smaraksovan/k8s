@@ -29,10 +29,15 @@ dashboard: refer: https://github.com/kubernetes/dashboard
 # Parse the token
 token=kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
 
-$ kubectl -n kube-system edit service kubernetes-dashboard
+$ kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard
 
              You should see yaml representation of the service.
               Change type: ClusterIP to type: NodePort and save file. 
               If it's already changed go to next step.
               
  $ kubectl -n kube-system get service kubernetes-dashboard
+ 
+ #To access the Dashboard
+ 
+https://ec2-13-233-63-242.ap-south-1.compute.amazonaws.com:30586/
+ 
